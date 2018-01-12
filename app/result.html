@@ -24,18 +24,48 @@
 	<!-- iOS Safari -->
 	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
 
+	<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }</style>
+
 </head>
 
 <body>
 
-	<ul>
-		<li><a href="radio.html">radio</a></li>
-		<li><a href="checkbox.html">checkbox</a></li>
-		<li><a href="textarea.html">textarea</a></li>
-		<li><a href="about.html">about</a></li>
-		<li><a href="email.html">email</a></li>
-		<li><a href="result.html">result</a></li>
-	</ul>
+	<div class="wrapper">
+
+		<header class="header">
+			<div class="header_inner">
+				<a href="#" class="header_logo">Punic Button</a>
+				<select class="header_lang">
+					<option value="ru">RU</option>
+					<option value="en">EN</option>
+				</select>
+			</div>
+		</header>
+
+		<div class="content">
+
+			<div class="poll">
+
+				<div class="poll_item active">
+					<div class="poll_result">
+						<div class="poll_result_title">Спасибо!</div>
+						<div class="poll_result_description">Ваше мнение важно для нас.</div>
+						<a class="poll_result_tomain" href="./">На главную</a>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<footer class="footer">
+			&copy; 2017. Webgears Services Ltd. All rights reserved
+		</footer>
+
+	</div>
+
+	<link rel="stylesheet" href="css/main.min.css">
+	<script src="js/scripts.min.js"></script>
 
 </body>
 </html>

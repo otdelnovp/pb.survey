@@ -17,6 +17,7 @@
 	&_item
 		display: block
 		position: absolute
+		z-index: 1
 		box-sizing: border-box
 		top: 0
 		left: 0
@@ -32,20 +33,33 @@
 		visibility: hidden
 
 		&.active
+			z-index: 2
 			transform: translateX(0) scale(1)
 			opacity: 1
 			visibility: visible
 		&.last
 			transform: translateX(-70%) scale(0.7)
 
+
 	&_question
 		display: block
 		margin: 0 0 15px
 		font-weight: 700
 
+		&-note
+			display: block
+			margin: -13px 0 15px
+
+
+	&_section
+		margin: 0 0 15px
+
+		&_title
+			margin: 0 0 10px
+
+
 	&_answer
 		display: block
-		overflow: hidden
 		position: relative
 
 		&_item
@@ -55,65 +69,39 @@
 			line-height: 20px
 			cursor: pointer
 
-
-			& input[type="text"]
-				display: block
-				padding: 0 3px
-				float: right
-				width: 240px
-				font-size: 14px
-				line-height: 20px
-				background: transparent
-				border: 0
-				border-bottom: 1px solid #ccc
-				transition: border-color 300ms
-				&:focus
-					border-color: $accent
-					box-shadow: 0 2.5px 2px -2.5px $accent
-
-			& input[type="radio"],
-			& input[type="checkbox"]
-				display: block
-				position: absolute
-				top: -100px
-				left: -100px
-
-			& .poll_answer_item_text
-				position: relative
-				padding: 0 0 0 27px
-				transition: color 200ms
-
-			& .poll_answer_item_text:before
-				content: ''
-				display: block
-				box-sizing: border-box
-				position: absolute
-				top: 50%
-				left: 0
-				transform: translateY(-50%)
-				width: 18px
-				height: 18px
-				border: 1px solid #ccc
-				box-shadow: inset 0 0 0 4px $bg
-				transition: border-color 200ms, background 200ms
-
-			& input[type="radio"] + .poll_answer_item_text:before
-				border-radius: 50%
-
-			& input[type="radio"]:checked + .poll_answer_item_text,
-			& input[type="checkbox"]:checked + .poll_answer_item_text
-				color: $accent
-
-			& input[type="radio"]:checked + .poll_answer_item_text:before,
-			& input[type="checkbox"]:checked + .poll_answer_item_text:before
-				border-color: $accent
-				background: $accent
-
 			&_other
 				float: right
 				width: 240px
 
+		&_country
+			width: 200px
+
 
 	&_submit
-		margin: 20px 0 0
+		margin: 25px 0 0
 		text-align: center
+
+
+	&_result
+		padding: 15px 0
+		text-align: center
+		&::before
+			content: ''
+			display: block
+			margin: 0 auto 15px
+			width: 62px
+			height: 62px
+			background: url(../img/result.png) center no-repeat
+			background-size: contain
+		&_title
+			margin: 0 0 5px
+			font-size: 24px
+			line-height: 30px
+			color: #1e282d
+		&_description
+			margin: 0 0 25px
+		&_tomain
+			color: #000
+			transition: color 300ms
+			&:hover
+				color: $accent
