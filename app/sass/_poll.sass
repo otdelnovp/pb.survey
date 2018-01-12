@@ -1,0 +1,119 @@
+.poll
+	display: block
+	position: relative
+	width: 100%
+	min-height: 460px
+	transform: translateY(100px)
+	opacity: 0
+	visibility: hidden
+
+	&.ready
+		transition: transform 500ms, opacity 500ms, visibility 500ms
+		transform: translateY(0)
+		opacity: 1
+		visibility: visible
+
+
+	&_item
+		display: block
+		position: absolute
+		box-sizing: border-box
+		top: 0
+		left: 0
+		padding: 45px 50px 50px
+		width: 100%
+		color: #000
+		background: $bg
+		box-shadow: 0 0 10px rgba(0,0,0,0.3)
+		border-radius: 6px
+		transition: transform 300ms, opacity 300ms, visibility 300ms
+		transform: translateX(70%) scale(0.7)
+		opacity: 0
+		visibility: hidden
+
+		&.active
+			transform: translateX(0) scale(1)
+			opacity: 1
+			visibility: visible
+		&.last
+			transform: translateX(-70%) scale(0.7)
+
+	&_question
+		display: block
+		margin: 0 0 15px
+		font-weight: 700
+
+	&_answer
+		display: block
+		overflow: hidden
+		position: relative
+
+		&_item
+			display: block
+			position: relative
+			margin: 0 0 12px
+			line-height: 20px
+			cursor: pointer
+
+
+			& input[type="text"]
+				display: block
+				padding: 0 3px
+				float: right
+				width: 240px
+				font-size: 14px
+				line-height: 20px
+				background: transparent
+				border: 0
+				border-bottom: 1px solid #ccc
+				transition: border-color 300ms
+				&:focus
+					border-color: $accent
+					box-shadow: 0 2.5px 2px -2.5px $accent
+
+			& input[type="radio"],
+			& input[type="checkbox"]
+				display: block
+				position: absolute
+				top: -100px
+				left: -100px
+
+			& .poll_answer_item_text
+				position: relative
+				padding: 0 0 0 27px
+				transition: color 200ms
+
+			& .poll_answer_item_text:before
+				content: ''
+				display: block
+				box-sizing: border-box
+				position: absolute
+				top: 50%
+				left: 0
+				transform: translateY(-50%)
+				width: 18px
+				height: 18px
+				border: 1px solid #ccc
+				box-shadow: inset 0 0 0 4px $bg
+				transition: border-color 200ms, background 200ms
+
+			& input[type="radio"] + .poll_answer_item_text:before
+				border-radius: 50%
+
+			& input[type="radio"]:checked + .poll_answer_item_text,
+			& input[type="checkbox"]:checked + .poll_answer_item_text
+				color: $accent
+
+			& input[type="radio"]:checked + .poll_answer_item_text:before,
+			& input[type="checkbox"]:checked + .poll_answer_item_text:before
+				border-color: $accent
+				background: $accent
+
+			&_other
+				float: right
+				width: 240px
+
+
+	&_submit
+		margin: 20px 0 0
+		text-align: center
