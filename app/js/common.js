@@ -1,6 +1,6 @@
 $(function() {
 
-	$('select').styler();
+	$('select').selectric();
 
 	$('.wrapper').addClass('ready');
 	setTimeout(function(){

@@ -2,7 +2,6 @@
 	display: block
 	position: relative
 	width: 100%
-	min-height: 460px
 	transform: translateY(100px)
 	opacity: 0
 	visibility: hidden
@@ -33,6 +32,7 @@
 		visibility: hidden
 
 		&.active
+			position: relative
 			z-index: 2
 			transform: translateX(0) scale(1)
 			opacity: 1
@@ -69,9 +69,21 @@
 			line-height: 20px
 			cursor: pointer
 
-			&_other
-				float: right
-				width: 240px
+		&_other
+			display: table
+			width: 100%
+		&_other_check
+			display: table-cell
+			vertical-align: middle
+			width: 25%
+		&_other_input
+			display: table-cell
+			vertical-align: middle
+			width: 75%
+			padding-left: 12px
+			& input
+				width: 100%
+				display: block
 
 		&_country
 			width: 200px
